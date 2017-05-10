@@ -1,0 +1,18 @@
+// Place all the styles related to the dashboard controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+polygon {
+  fill: lightgrey;
+  &:hover {
+    fill: lightyellow;
+  }
+}
+
+#basement {
+  fill: grey;
+}
+
+#sleeping_room{
+}
