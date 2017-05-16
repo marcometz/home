@@ -1,14 +1,10 @@
-
-<%# Umrechnung: 100cm = %>
-
-<%# basement = [ [20,20], [780,20], [780,380], [20,380] ] %>
 <% basement = [ [1.5, 0], [16.5, 0],
                 [16.5, 3.5], [18.0, 3.5], [18.0, 5.5], [16.5, 5.5] ,[16.5, 6.5],
                 [10.6, 6.5], [10.6, 7.2], [ 6.2, 7.2], [6.2, 6.6],
                 [6.0, 6.6], [6.0, 9.0], [0, 9.00], [0, 6.3], [1.5, 6.3]  ] %>
 <% sleeping_room = [[16.4, 6.4], [12.6, 6.4], [12.6, 3.6], [16.4, 3.6] ] %>
 <% kids_room = [[12.6, 0.1], [12.6, 3.4], [16.4, 3.4], [16.4, 0.1] ] %>
-<% hallway = [[12.5, 6.5], [11.3, 6.5], [11.3, 3.2], [6.5,3.2], [6.5,2] , [12.5, 2] ] %>
+<% hallway = [[12.5, 6.4], [11.3, 6.4], [11.3, 3.2], [6.5,3.2], [6.5,2] , [12.5, 2] ] %>
 <% bath_small = [[12.4, 1.9], [9.6, 1.9], [9.6, 0.1], [12.4, 0.1] ] %>
 <% bath_big = [[9.4, 1.9], [5.6, 1.9], [5.6, 0.1], [9.4, 0.1] ] %>
 <% balcony_big = [ [0, 6.3], [2.7, 6.3], [2.7, 9], [0,9] ] %>
@@ -19,43 +15,28 @@
                    [5.9, 8.9], [2.7, 8.9], [2.7, 6.2], [1.6, 6.2] ] %>
 
 <svg viewBox="0 0 <%= @view_port_width %> <%= @view_port_height %>" width="100%" height="100%">
-  <polygon id="basement"
-           points="<%= points(basement) %>"
-           style="stroke-width:1;stroke:black;" />
+  <polygon id="basement" points="<%= points(basement) %>" />
+  <polygon id="sleeping_room" points="<%= points(sleeping_room) %>" />
+  <polygon id="kids_room" points="<%= points(kids_room) %>" />
+  <polygon id="hallway" points="<%= points(hallway) %>" />
+  <polygon id="bath_small" points="<%= points(bath_small) %>" />
+  <polygon id="bath_big" points="<%= points(bath_big) %>" />
+  <polygon id="balcony_big" points="<%= points(balcony_big) %>" />
+  <polygon id="balcony_small" points="<%= points(balcony_small) %>" />
+  <polygon id="kitchen" points="<%= points(kitchen) %>" />
+  <polygon id="living_room" points="<%= points(living_room) %>" />
 
-  <polygon id="sleeping_room"
-           points="<%= points(sleeping_room) %>"
-           style="" />
+  <%= door(7, 1.95, -90, :open) %>
+  <%= door(11.5, 1.95, 90, :open) %>
+  <%= door(12.55, 2.1, 0, :open) %>
+  <%= door(12.55, 5.1, 180, :open) %>
+  <%= door(11.45, 6.45, 270, :closed) %>
 
-  <polygon id="kids_room"
-           points="<%= points(kids_room) %>"
-           style="" />
-
-  <polygon id="hallway"
-           points="<%= points(hallway) %>"
-           style="" />
-
-  <polygon id="bath_small"
-           points="<%= points(bath_small) %>"
-           style="" />
-
-  <polygon id="bath_big"
-           points="<%= points(bath_big) %>"
-           style="" />
-
-  <polygon id="balcony_big"
-           points="<%= points(balcony_big) %>"
-           style="stroke-width:1;stroke:black;" />
-
-  <polygon id="balcony_small"
-           points="<%= points(balcony_small) %>"
-           style="stroke-width:1;stroke:black;" />
-
-  <polygon id="kitchen"
-           points="<%= points(kitchen) %>"
-           style="" />
-
-  <polygon id="living_room"
-           points="<%= points(living_room) %>"
-           style="" />
+  <%= window(16.45, 4.0, 0, :open) %>
+  <%= window(16.45, 1.6, 0, :open) %>
+  <%= window(10.8, 0.05, 270, :open) %>
+  <%= window(7.0, 0.05, 270, :open) %>
+  <%= window(1.55, 2.6, 180, :open) %>
+  <%= window(1.55, 4.6, 180, :open) %>
+  <%= window(2.7, 8.9, 180, :open) %>
 </svg>

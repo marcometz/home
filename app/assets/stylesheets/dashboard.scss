@@ -16,3 +16,32 @@ polygon {
 
 #sleeping_room{
 }
+
+.door {
+  stroke-width: 5;
+  stroke: black;
+  &.baseline {
+    stroke: lightgrey;
+    stroke-width: 4;
+  }
+}
+
+.door-handle {
+  stroke: black;
+  fill: black;
+  stroke-width: 1;
+}
+
+.window {
+  .door-handle {
+    stroke: lightblue;
+    fill: lightblue;
+    stroke-width: 0.5;
+  }
+  .door{
+    stroke: lightblue;
+    &.baseline {
+      stroke: lightgrey;
+    }
+  }
+}

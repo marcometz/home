@@ -19,5 +19,5 @@
 
 /node_modules
 /yarn-error.log
-
+db/githook_dumps
 .byebug_history
